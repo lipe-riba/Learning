@@ -13,7 +13,7 @@ namespace AshProjeto
             public int X;
             public int Y;
 
-	        public void move(char position) 
+	    public void move(char position) 
             {
                 switch (position)
                 {
