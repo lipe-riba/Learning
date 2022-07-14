@@ -82,7 +82,7 @@ namespace AshProjeto
             return;
         }
 
-        static private void ShowMsg(string msg)
+        private static private void ShowMsg(string msg)
         {
             Console.WriteLine(msg);
             Console.WriteLine("Tecle ENTER para continuar...");
@@ -90,7 +90,7 @@ namespace AshProjeto
             return;
         }
 
-        static void NewGame()
+        private static void NewGame()
         {
             Console.Clear();
             StartGame("");
