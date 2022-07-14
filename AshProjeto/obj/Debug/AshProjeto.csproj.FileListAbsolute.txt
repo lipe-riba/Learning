@@ -1,0 +1,7 @@
+d:\Users\felipe\Documentos\Visual Studio 2013\Projects\AshProjeto\bin\Debug\AshProjeto.exe.config
+D:\Users\felipe\Documentos\Visual Studio 2013\Projects\Ash\AshProjeto\bin\Debug\AshProjeto.exe.config
+D:\Users\felipe\Documentos\Visual Studio 2013\Projects\Ash\AshProjeto\bin\Debug\AshProjeto.exe
+D:\Users\felipe\Documentos\Visual Studio 2013\Projects\Ash\AshProjeto\bin\Debug\AshProjeto.pdb
+D:\Users\felipe\Documentos\Visual Studio 2013\Projects\Ash\AshProjeto\obj\Debug\AshProjeto.csprojResolveAssemblyReference.cache
+D:\Users\felipe\Documentos\Visual Studio 2013\Projects\Ash\AshProjeto\obj\Debug\AshProjeto.exe
+D:\Users\felipe\Documentos\Visual Studio 2013\Projects\Ash\AshProjeto\obj\Debug\AshProjeto.pdb
