@@ -57,7 +57,7 @@ namespace AshProjeto
                 //Check if has invalid move
                 if ("NSEO".IndexOf(c) == -1)
                 {
-                    //If has, exit with value -1
+                    //If has invalid move, exit with value -1
                     return -1;
                 }
                 //
@@ -66,10 +66,10 @@ namespace AshProjeto
                 strCoord = position.ToString();
                 //Checking if that coord already exists
                 hasCoord = hs.Contains(strCoord);
-                //If not exists, add in hashset
+                //If it doesn't exist, add it to the hashset and count the pokemon found.
                 if (!hasCoord)
                 {
-                    //Registering coord
+                    //Adding coord
                     hs.Add(strCoord);
                     //Add more 1
                     ret += 1;           
