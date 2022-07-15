@@ -10,8 +10,8 @@ namespace AshProjeto
     {
         public class Coord
         {
-            private int posX { get; set; }
-            private int posY { get; set; }
+            private int posX;
+            private int posY;
 
             public void move(char position) 
             {
