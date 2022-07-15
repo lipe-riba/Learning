@@ -10,24 +10,24 @@ namespace AshProjeto
     {
         public class Coord
         {
-            public int X;
-            public int Y;
+            private int posX { get; set; }
+            private int posY { get; set; }
 
-	    public void move(char position) 
+            public void move(char position) 
             {
                 switch (position)
                 {
-                    case 'N':
-                        this.X -= 1;
+                    case 'N': //North
+                        posX -= 1;
                         break;
-                    case 'S':
-                        this.X += 1;
+                    case 'S': //South
+                        posX += 1;
                         break;
-                    case 'E':
-                        this.Y += 1;
+                    case 'E': //East
+                        posY += 1;
                         break;
-                    case 'O':
-                        this.Y -= 1;
+                    case 'O': //West
+                        posY -= 1;
                         break;
                 }
                 return;
@@ -35,7 +35,7 @@ namespace AshProjeto
 
             public override string ToString()
             {
-                return X.ToString() + ":" + Y.ToString();
+                return posX.ToString() + ":" + posY.ToString();
             }
         }
 
@@ -46,8 +46,8 @@ namespace AshProjeto
             String strCoord = ""; 
             int ret = 0;
             //
-            //Initial position already has pokemon in that coord
-            strCoord = position.ToString();
+            //Initial position already has pokemon in that coordinate
+            strCoord = position.ToString(); //0:0
             hs.Add(strCoord);    
             ret = 1;
             // 
@@ -61,21 +61,21 @@ namespace AshProjeto
                     return -1;
                 }
                 //
-                //Move to next coord
+                //Move to next coordinate
                 position.move(c);
                 strCoord = position.ToString();
-                //Checking if that coord already exists
+                //Checking if that coordinate already exists
                 hasCoord = hs.Contains(strCoord);
-                //If it doesn't exist, add it to the hashset and count the pokemon found.
+                //If it doesn't exist there is a pokemon over there 
                 if (!hasCoord)
                 {
-                    //Adding coord
+                    //Storing coordinate
                     hs.Add(strCoord);
-                    //Add more 1
+                    //Adding 1 pokemon
                     ret += 1;           
                 }
             }
-            //
+            //Returrning the amount of pokemons found
             return ret;
         }
     }

@@ -5,3 +5,11 @@ D:\Users\felipe\Documentos\Visual Studio 2013\Projects\Ash\AshProjeto\bin\Debug\
 D:\Users\felipe\Documentos\Visual Studio 2013\Projects\Ash\AshProjeto\obj\Debug\AshProjeto.csprojResolveAssemblyReference.cache
 D:\Users\felipe\Documentos\Visual Studio 2013\Projects\Ash\AshProjeto\obj\Debug\AshProjeto.exe
 D:\Users\felipe\Documentos\Visual Studio 2013\Projects\Ash\AshProjeto\obj\Debug\AshProjeto.pdb
+D:\Projetos\VisualStudio\Ash\AshProjeto\bin\Debug\AshProjeto.exe.config
+D:\Projetos\VisualStudio\Ash\AshProjeto\bin\Debug\AshProjeto.exe
+D:\Projetos\VisualStudio\Ash\AshProjeto\bin\Debug\AshProjeto.pdb
+D:\Projetos\VisualStudio\Ash\AshProjeto\obj\Debug\AshProjeto.csproj.AssemblyReference.cache
+D:\Projetos\VisualStudio\Ash\AshProjeto\obj\Debug\AshProjeto.csproj.SuggestedBindingRedirects.cache
+D:\Projetos\VisualStudio\Ash\AshProjeto\obj\Debug\AshProjeto.csproj.CoreCompileInputs.cache
+D:\Projetos\VisualStudio\Ash\AshProjeto\obj\Debug\AshProjeto.exe
+D:\Projetos\VisualStudio\Ash\AshProjeto\obj\Debug\AshProjeto.pdb

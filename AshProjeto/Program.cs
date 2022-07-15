@@ -91,12 +91,5 @@ namespace AshProjeto
             Console.ReadLine();
             return;
         }
-
-        private static void NewGame()
-        {
-            Console.Clear();
-            StartGame("");
-            return;
-        }
     }
 }
