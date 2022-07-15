@@ -79,6 +79,7 @@ namespace AshProjeto
                 return;
             }
             //
+            //Total pokemons collected
             ShowMsg(String.Format("\nPokemons: {0}", total));
             return;
         }
