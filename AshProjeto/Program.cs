@@ -72,6 +72,7 @@ namespace AshProjeto
             //Counting all moves in typed coordinates
             Coords pokemons = new Coords();
             total = pokemons.GetTotalPokemonsByCoords(coords);
+            //If has some invalid move
             if (total == -1)
             {
                 ShowMsg("\nMovimento inválido!");
