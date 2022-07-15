@@ -32,7 +32,7 @@ namespace AshProjeto
                 //If has the first prompt command parameter
                 if (args[0].Length > 0)
                 {
-                    //If the user has inputted lowercase chars change to uppercase
+                    //Change to uppercase chars If the user has inputted the coordinates with lowercase chars
                     coords = args[0].ToUpper();
                 }
             }
