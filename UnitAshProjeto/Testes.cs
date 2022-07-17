@@ -1,6 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using AshProjeto;
+﻿using AshProjeto.Model;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitAshProjeto
 {
@@ -19,7 +18,7 @@ namespace UnitAshProjeto
         public void Teste2()
         {
             Coords coords = new Coords();
-            int total =coords.GetTotalPokemonsByCoords("NNSSNNNNGEEOOOOSOOOSH");
+            int total = coords.GetTotalPokemonsByCoords("NNSSNNNNGEEOOOOSOOOSH");
             Assert.AreEqual(total, -1);
         }
 
