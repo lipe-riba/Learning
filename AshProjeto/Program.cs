@@ -42,7 +42,7 @@ namespace AshProjeto
         {
             int total = 0;
 
-            //Game introdution
+            //Game introduction
             Console.WriteLine("\n[Pokemon: apanhá-los todos]");
             Console.WriteLine("Em um mundo cheio de Pokemons sua tarefa será capturá-los. Boa sorte!");
             Console.WriteLine("\nInforme a sequência de movimentos para capturá-los:");
