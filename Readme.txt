@@ -1,5 +1,7 @@
 1) Código-fonte em AshProjeto\Program.cs
-   OBS: AshProjeto\Coords.cs contém o tratamento das coordenadas.
+   OBS: 
+       - AshProjeto\Models\Coords.cs contém o tratamento das coordenadas.
+       - AshProjeto\Models\Coord.cs contém o modelo para a coordenada.
 
 2) Teste unitário está na pasta UnitAshProjeto\Testes.cs
  
