@@ -1,23 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace AshProjeto.Model
 {
     public class Coords
     {
-        public int GetTotalPokemonsByCoords(String coords)
+        public int GetTotalPokemonsByCoords(string coords)
         {
-            HashSet<String> hs = new HashSet<String>();
+            HashSet<string> hs = new HashSet<string>();
             Coord position = new Coord();
-            String strCoord = "";
-            int ret = 0;
-            //
+
             //Initial position already has pokemon in that coordinate
-            strCoord = position.ToString(); //0:0
+            int ret = 1;
+            string strCoord = position.ToString(); //0:0
             hs.Add(strCoord);
-            ret = 1;
-            // 
-            bool hasCoord = false;
+
             foreach (char c in coords)
             {
                 //Check if has invalid move
@@ -26,12 +22,14 @@ namespace AshProjeto.Model
                     //If has invalid move, exit with value -1
                     return -1;
                 }
-                //
+                
                 //Move to next coordinate
-                position.move(c);
+                position.MoveTo(c);
                 strCoord = position.ToString();
+                
                 //Checking if that coordinate already exists
-                hasCoord = hs.Contains(strCoord);
+                bool hasCoord = hs.Contains(strCoord);
+
                 //If it doesn't exist there is a pokemon over there 
                 if (!hasCoord)
                 {

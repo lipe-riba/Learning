@@ -13,3 +13,11 @@ D:\Projetos\VisualStudio\Ash\AshProjeto\obj\Debug\AshProjeto.csproj.SuggestedBin
 D:\Projetos\VisualStudio\Ash\AshProjeto\obj\Debug\AshProjeto.csproj.CoreCompileInputs.cache
 D:\Projetos\VisualStudio\Ash\AshProjeto\obj\Debug\AshProjeto.exe
 D:\Projetos\VisualStudio\Ash\AshProjeto\obj\Debug\AshProjeto.pdb
+D:\Projetos\Git\lipe-riba\Ash\AshProjeto\bin\Debug\AshProjeto.exe.config
+D:\Projetos\Git\lipe-riba\Ash\AshProjeto\bin\Debug\AshProjeto.exe
+D:\Projetos\Git\lipe-riba\Ash\AshProjeto\bin\Debug\AshProjeto.pdb
+D:\Projetos\Git\lipe-riba\Ash\AshProjeto\obj\Debug\AshProjeto.csproj.AssemblyReference.cache
+D:\Projetos\Git\lipe-riba\Ash\AshProjeto\obj\Debug\AshProjeto.csproj.SuggestedBindingRedirects.cache
+D:\Projetos\Git\lipe-riba\Ash\AshProjeto\obj\Debug\AshProjeto.csproj.CoreCompileInputs.cache
+D:\Projetos\Git\lipe-riba\Ash\AshProjeto\obj\Debug\AshProjeto.exe
+D:\Projetos\Git\lipe-riba\Ash\AshProjeto\obj\Debug\AshProjeto.pdb

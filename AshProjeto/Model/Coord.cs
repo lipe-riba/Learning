@@ -1,33 +1,44 @@
-﻿namespace AshProjeto.Model
+﻿using System.Windows;
+
+namespace AshProjeto.Model
 {
     public class Coord
     {
-        private int posX;
-        private int posY;
+        private Point point;
 
-        public void move(char position)
+        public Coord()
         {
-            switch (position)
-            {
-                case 'N': //North
-                    posX -= 1;
-                    break;
-                case 'S': //South
-                    posX += 1;
-                    break;
-                case 'E': //East
-                    posY += 1;
-                    break;
-                case 'O': //West
-                    posY -= 1;
-                    break;
-            }
-            return;
+            this.point = new Point(0, 0);
+        }
+
+        public Point N => new Point(0, -1);
+        public Point S => new Point(0, 1);
+        public Point E => new Point(1, 0);
+        public Point O => new Point(-1, 0);
+
+        Point StringToPoint(char cardinal)
+        {
+            if (cardinal == 'N')
+                return this.N;
+            if (cardinal == 'S')
+                return this.S;
+            if (cardinal == 'E')
+                return this.E;
+            if (cardinal == 'O')
+                return this.O;
+            return new Point(0, 0);
+        }
+
+        public void MoveTo(char cardinal)
+        {
+            Point p = StringToPoint(cardinal);
+            point.X += p.X;
+            point.Y += p.Y;
         }
 
         public override string ToString()
         {
-            return posX.ToString() + ":" + posY.ToString();
+            return string.Format("{0}:{1}", this.point.X.ToString(), this.point.Y.ToString());
         }
     }
 }
