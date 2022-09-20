@@ -16,7 +16,7 @@ namespace AshProjeto.Model
         public Point E => new Point(1, 0);
         public Point O => new Point(-1, 0);
 
-        Point StringToPoint(char cardinal)
+        private Point StringToPoint(char cardinal)
         {
             if (cardinal == 'N')
                 return this.N;
