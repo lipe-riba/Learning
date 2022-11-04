@@ -1,4 +1,5 @@
 ﻿using AshProjeto.Model;
+using AshProjeto.Services;
 using System;
 
 namespace AshProjeto
@@ -8,34 +9,27 @@ namespace AshProjeto
         public static void Main(string[] args)
         {
             string coords = "";
+            Message message = new Message();
+
+            Console.WriteLine("Type the sequence of movements to catch the pokemons:\n" +
+                              "Key: N (North), S (South), E (East), O (West)" +
+                              "\n\n" +
+                              "eg: NSNSNNEEEEOOO\n" +
+                              $"{coords}");
+
             //If it is coming from prompt command.
-            if (string.Join("", args).Length > 0)
+            if (args.Length > 0)
             {
                 //Change to uppercase chars If the user has inputted the coordinates with lowercase chars
                 coords = args[0].ToUpper();
-            }
-            StartGame(coords);
-        }
-
-        private static void StartGame(string coords)
-        {
-            Console.WriteLine("Type the sequence of movements to catch them:");
-            Console.WriteLine("Key: N (North), S (South), E (East), O (West)\n");
-            Console.WriteLine("eg: NSNSNNEEEEOOO\n");
-
-            //If there is no coordinates
-            if (coords.Length == 0)
-            {
-                coords = Console.ReadLine();
+                Console.WriteLine(coords);
             }
             else
             {
-                //If coordinates was typed from command prompt
-                Console.WriteLine(coords);
+                //If there are no coordinates
+                coords = Console.ReadLine();
             }
-
-            Message message = new Message();
-
+ 
             //If it has the initial moves only.
             if (coords.Length == 0)
             {
@@ -44,8 +38,8 @@ namespace AshProjeto
             }
 
             //Counting all moves in typed coordinates
-            Coords pokemons = new Coords();
-            int total = pokemons.GetTotalPokemonsByCoords(coords);
+            CoordModel model = new CoordModel();
+            int total = model.GetTotalPokemonsByCoords(coords);
 
             //If has some invalid move
             if (total == -1)

@@ -9,7 +9,7 @@ namespace UnitAshProjeto
         [TestMethod]
         public void Teste1()
         {
-            Coords coords = new Coords();
+            ICoordModel coords = new CoordModel();
             int total = coords.GetTotalPokemonsByCoords("SNSNSNSNSNENENENENENOOOOOOEEOOOSOOOENNNNEEEOOOOSOOSOSOSOOSOEOENNNNNNSNSNSNSNSNENENENENENOOOOOOEEOOOSOOOENNNNEEEOOOOSOOSOSOSOOSOEOENNNNNNSNSNSNSNSNENENENENENOOOOOOEEOOOSOOOENNNNEEEOOOOSOOSOSOSOOSOEOENNNNNNSNSNSNSNSNENENENENENOOOOOOEEOOOSOOOENNNNEEEOOOOSOOSOSOSOOSOEOENNNNNNSNSNSNSNSNENENENENENOOOOOOEEOOOSOOOENNNNEEEOOOOSOOSOSOSOOSOEOENNNNNNSNSNSNSNSNENENENENENOOOOOOEEOOOSOOOENNNNEEEOOOOSOOSOSOSOOSOEOENNNNNNSNSNSNSNSNENENENENENOOOOOOEEOOOSOOOENNNNEEEOOOOSOOSOSOSOOSOEOENNNNNNSNSNSNSNSNENENENENENOOOOOOEEOOOSOOOENNNNEEEOOOOSOOSOSOSOOSOEOENNNNNN");
             Assert.AreEqual(total, 370);
         }
@@ -17,7 +17,7 @@ namespace UnitAshProjeto
         [TestMethod]
         public void Teste2()
         {
-            Coords coords = new Coords();
+            ICoordModel coords = new CoordModel();
             int total = coords.GetTotalPokemonsByCoords("NNSSNNNNGEEOOOOSOOOSH");
             Assert.AreEqual(total, -1);
         }
@@ -25,7 +25,7 @@ namespace UnitAshProjeto
         [TestMethod]
         public void Teste3()
         {
-            Coords coords = new Coords();
+            ICoordModel coords = new CoordModel();
             int total = coords.GetTotalPokemonsByCoords("SNSNENENENENENOOO");
             Assert.AreEqual(total, 15);
         }
@@ -33,7 +33,7 @@ namespace UnitAshProjeto
         [TestMethod]
         public void Teste4()
         {
-            Coords coords = new Coords();
+            ICoordModel coords = new CoordModel();
             int total = coords.GetTotalPokemonsByCoords("E");
             Assert.AreEqual(total, 2);
         }

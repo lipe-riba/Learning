@@ -47,16 +47,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Coord.cs" />
-    <Compile Include="Model\Coords.cs" />
-    <Compile Include="Model\Message.cs" />
+    <Compile Include="Model\CoordModel.cs" />
+    <Compile Include="Model\ICoordModel.cs" />
+    <Compile Include="Services\Message.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="AshProjeto.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

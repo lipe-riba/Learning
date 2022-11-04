@@ -1,44 +1,38 @@
-﻿using System.Windows;
+﻿using System.Collections.Generic;
+using System.Windows;
 
 namespace AshProjeto.Model
 {
     public class Coord
     {
-        private Point point;
+        private Dictionary<string, Point> _points;
 
         public Coord()
         {
-            this.point = new Point(0, 0);
+            _points = new Dictionary<string, Point>()
+            {
+                {"N", N },
+                {"S", S },
+                {"E", E },
+                {"O", O }
+            };
         }
 
-        public Point N => new Point(0, -1);
-        public Point S => new Point(0, 1);
-        public Point E => new Point(1, 0);
-        public Point O => new Point(-1, 0);
+        public static Point N => new Point(0, -1);
+        public static Point S => new Point(0, 1);
+        public static Point E => new Point(1, 0);
+        public static Point O => new Point(-1, 0);
 
-        private Point StringToPoint(char cardinal)
+        public static Point ZERO => new Point(0, 0);
+
+        public bool Valid(char cardinal)
         {
-            if (cardinal == 'N')
-                return this.N;
-            if (cardinal == 'S')
-                return this.S;
-            if (cardinal == 'E')
-                return this.E;
-            if (cardinal == 'O')
-                return this.O;
-            return new Point(0, 0);
+            return _points.ContainsKey(cardinal.ToString());
         }
 
-        public void MoveTo(char cardinal)
+        public Point ToPoint(char cardinal)
         {
-            Point p = StringToPoint(cardinal);
-            point.X += p.X;
-            point.Y += p.Y;
-        }
-
-        public override string ToString()
-        {
-            return string.Format("{0}:{1}", this.point.X.ToString(), this.point.Y.ToString());
+            return _points[cardinal.ToString()];
         }
     }
 }
