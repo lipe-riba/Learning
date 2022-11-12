@@ -5,23 +5,23 @@ namespace AshProjeto.Model
 {
     public class CoordModel : ICoordModel
     {
-        Coord coord = null;
+        Coord _coord = null;
         
         public CoordModel()
         {
-            coord = new Coord();
+            _coord = new Coord();
         }
 
         public Point MoveTo(Point point, char cardinal)
         {
-            Point p = coord.ToPoint(cardinal);
+            Point p = _coord.ToPoint(cardinal);
             p.Offset(point.X, point.Y);
             return p;
         }
 
         public Point GetPoint(char cardinal)
         {
-            return coord.ToPoint(cardinal);
+            return _coord.ToPoint(cardinal);
         }
 
         public int GetTotalPokemonsByCoords(string coords)
@@ -38,7 +38,7 @@ namespace AshProjeto.Model
             foreach (char cardinal in coords)
             {
                 //Check if has invalid move
-                if (!coord.Valid(cardinal))
+                if (!_coord.Valid(cardinal))
                 {
                     //If has invalid move, exit with value -1
                     return -1;
