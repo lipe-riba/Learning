@@ -60,7 +60,7 @@ namespace AshProjeto.Model
                     ret += 1;
                 }
             }
-            //Returrning the amount of pokemons found
+            //Returning the amount of pokemons found
             return ret;
         }
     }
