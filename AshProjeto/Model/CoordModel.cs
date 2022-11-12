@@ -6,39 +6,58 @@ namespace AshProjeto.Model
     public class CoordModel : ICoordModel
     {
         Coord _coord = null;
-        
+
+        private Dictionary<string, Point> _points;
+
         public CoordModel()
         {
             _coord = new Coord();
+            _points = new Dictionary<string, Point>()
+            {
+                {"N", _coord.N },
+                {"S", _coord.S },
+                {"E", _coord.E },
+                {"O", _coord.O }
+            };
         }
 
-        public Point MoveTo(Point point, char cardinal)
+        public bool Valid(char cardinal)
         {
-            Point p = _coord.ToPoint(cardinal);
-            p.Offset(point.X, point.Y);
+            return _points.ContainsKey(cardinal.ToString());
+        }
+
+        public Point ToPoint(char cardinal)
+        {
+            return _points[cardinal.ToString()];
+        }
+
+        public Point MoveTo(Point fromPoint, char toCardinal)
+        {
+            Point p = ToPoint(toCardinal);
+            p.Offset(fromPoint.X, fromPoint.Y);
             return p;
         }
 
-        public Point GetPoint(char cardinal)
+        public Point MoveTo(Point fromPoint, Point toPoint)
         {
-            return _coord.ToPoint(cardinal);
+            toPoint.Offset(fromPoint.X, fromPoint.Y);
+            return toPoint;
         }
 
         public int GetTotalPokemonsByCoords(string coords)
         {
-            HashSet<string> hs = new HashSet<string>();
+            HashSet<string> hsPointPokemonsCollected = new HashSet<string>();
 
-            //Initial position already has pokemon in that coordinate
-            int ret = 1;
-            Point point = Coord.ZERO;
+            Point point = _coord.ZERO;
 
+            //The initial position already has a pokemon
             string strPoint = point.ToString();
-            hs.Add(strPoint);
+            hsPointPokemonsCollected.Add(strPoint);
 
             foreach (char cardinal in coords)
             {
                 //Check if has invalid move
-                if (!_coord.Valid(cardinal))
+                if (!Valid(cardinal))
                 {
                     //If has invalid move, exit with value -1
                     return -1;
@@ -48,20 +67,16 @@ namespace AshProjeto.Model
                 point = MoveTo(point, cardinal);
                 strPoint = point.ToString();
 
-                //Checking if that coordinate already exists
-                bool hasPoint = hs.Contains(strPoint);
-
                 //If it doesn't exist there is a pokemon over there 
-                if (!hasPoint)
+                if (!hsPointPokemonsCollected.Contains(strPoint))
                 {
                     //Storing coordinate
-                    hs.Add(strPoint);
-                    //Adding 1 pokemon
-                    ret += 1;
+                    hsPointPokemonsCollected.Add(strPoint);
                 }
             }
+
             //Returning the amount of pokemons found
-            return ret;
+            return hsPointPokemonsCollected.Count;
         }
     }
 }
