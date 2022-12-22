@@ -8,6 +8,6 @@
 3) Arquivo executável está na pasta AshProjeto\bin\debug\
 
 -> AshProjeto.exe
-  - Pode executá-lo sem os parâmetros e, se quiser, pode passar parâmetro para o executável para os testes.
+  - Há duas formas de execução. Uma sem parâmetro e a outra passando o parâmetro com a sequência das coordenadas.
     Ex1: AshProjeto.exe
     Ex2: AshProjeto.exe NSEOSNSNSNNS
