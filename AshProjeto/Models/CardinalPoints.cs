@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using AshProjeto.Interfaces;
+using System.Collections.Generic;
 using System.Windows;
 
 namespace AshProjeto.Models
 {
-    public sealed class CardinalPoints
+    public sealed class CardinalPoints : ICardinalPoints
     {
-        public static Point N 
+        public Point N 
         {
             get
             {
@@ -13,7 +14,7 @@ namespace AshProjeto.Models
             }
         } 
 
-        public static Point S 
+        public Point S 
         { 
             get 
             { 
@@ -21,7 +22,7 @@ namespace AshProjeto.Models
             } 
         }
 
-        public static Point E
+        public Point E
         {
             get
             {
@@ -29,7 +30,7 @@ namespace AshProjeto.Models
             }
         }
 
-        public static Point O
+        public Point O
         {
             get
             {
@@ -44,15 +45,15 @@ namespace AshProjeto.Models
                 return new Point(0, 0);
             }
         }
-
-        public static Dictionary<string, Point> ToDictionary() 
+        
+        public Dictionary<string, Point> ToDictionary() 
         {
             return new Dictionary<string, Point>()
             {
-                {"N", CardinalPoints.N },
-                {"S", CardinalPoints.S },
-                {"E", CardinalPoints.E },
-                {"O", CardinalPoints.O }
+                {"N", N },
+                {"S", S },
+                {"E", E },
+                {"O", O }
             };
         }
     }

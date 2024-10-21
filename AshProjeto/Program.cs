@@ -9,8 +9,7 @@ namespace AshProjeto
         public static void Main(string[] args)
         {
             string cardinalPoints = "";
-            MessageService message = new MessageService();
-
+ 
             Console.WriteLine("Type the sequence of movements to catch the pokemons:\n" +
                               "Key: N (North), S (South), E (East), O (West)" +
                               "\n\n" +
@@ -33,23 +32,23 @@ namespace AshProjeto
             //If it has no initial movements
             if (cardinalPoints.Length == 0)
             {
-                message.Show("Type the movements.");
+                MessageService.Show("Type the movements.");
                 return;
             }
 
             //Counting all movements in typed coordinates
-            CardinalPointsService model = new CardinalPointsService();
+            CardinalPointsService model = new CardinalPointsService(new CardinalPoints());
             int total = model.GetTotalPokemonsByCardinalPoint(cardinalPoints);
 
             //If has some invalid movements
             if (total == -1)
             {
-                message.Show("Invalid movement!");
+                MessageService.Show("Invalid movement!");
                 return;
             }
 
             //Total pokemons collected
-            message.Show(string.Format("Pokemons: {0}", total));
+            MessageService.Show(string.Format("Pokemons: {0}", total));
         }
     }
 }

@@ -9,9 +9,9 @@ namespace AshProjeto.Services
     {
         private Dictionary<string, Point> _points;
 
-        public CardinalPointsService()
+        public CardinalPointsService(ICardinalPoints cardinalPoints)
         {
-            _points = CardinalPoints.ToDictionary();
+            _points = cardinalPoints.ToDictionary();
         }
 
         public bool Valid(char cardinal)
