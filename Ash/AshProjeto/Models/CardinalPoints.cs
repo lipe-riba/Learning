@@ -53,7 +53,8 @@ namespace AshProjeto.Models
                 {"N", N },
                 {"S", S },
                 {"E", E },
-                {"O", O }
+                {"O", O },
+                {"0", ZERO },
             };
         }
     }

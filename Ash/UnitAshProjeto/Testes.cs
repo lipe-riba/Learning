@@ -2,6 +2,8 @@
 using AshProjeto.Models;
 using AshProjeto.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
+using System.Windows;
 
 namespace UnitAshProjeto
 {
@@ -13,33 +15,37 @@ namespace UnitAshProjeto
         [TestMethod]
         public void Teste1()
         {
-            ICardinalPointsService cardinal = new CardinalPointsService(_cardinalPoints);
-            int total = cardinal.GetTotalPokemonsByCardinalPoint("SNSNSNSNSNENENENENENOOOOOOEEOOOSOOOENNNNEEEOOOOSOOSOSOSOOSOEOENNNNNNSNSNSNSNSNENENENENENOOOOOOEEOOOSOOOENNNNEEEOOOOSOOSOSOSOOSOEOENNNNNNSNSNSNSNSNENENENENENOOOOOOEEOOOSOOOENNNNEEEOOOOSOOSOSOSOOSOEOENNNNNNSNSNSNSNSNENENENENENOOOOOOEEOOOSOOOENNNNEEEOOOOSOOSOSOSOOSOEOENNNNNNSNSNSNSNSNENENENENENOOOOOOEEOOOSOOOENNNNEEEOOOOSOOSOSOSOOSOEOENNNNNNSNSNSNSNSNENENENENENOOOOOOEEOOOSOOOENNNNEEEOOOOSOOSOSOSOOSOEOENNNNNNSNSNSNSNSNENENENENENOOOOOOEEOOOSOOOENNNNEEEOOOOSOOSOSOSOOSOEOENNNNNNSNSNSNSNSNENENENENENOOOOOOEEOOOSOOOENNNNEEEOOOOSOOSOSOSOOSOEOENNNNNN");
-            Assert.AreEqual(total, 370);
+            ICardinalPointsService cardinalPointService = new CardinalPointsService(_cardinalPoints);
+            IList<Point> points = cardinalPointService.ToPoints("SNSNSNSNSNENENENENENOOOOOOEEOOOSOOOENNNNEEEOOOOSOOSOSOSOOSOEOENNNNNNSNSNSNSNSNENENENENENOOOOOOEEOOOSOOOENNNNEEEOOOOSOOSOSOSOOSOEOENNNNNNSNSNSNSNSNENENENENENOOOOOOEEOOOSOOOENNNNEEEOOOOSOOSOSOSOOSOEOENNNNNNSNSNSNSNSNENENENENENOOOOOOEEOOOSOOOENNNNEEEOOOOSOOSOSOSOOSOEOENNNNNNSNSNSNSNSNENENENENENOOOOOOEEOOOSOOOENNNNEEEOOOOSOOSOSOSOOSOEOENNNNNNSNSNSNSNSNENENENENENOOOOOOEEOOOSOOOENNNNEEEOOOOSOOSOSOSOOSOEOENNNNNNSNSNSNSNSNENENENENENOOOOOOEEOOOSOOOENNNNEEEOOOOSOOSOSOSOOSOEOENNNNNNSNSNSNSNSNENENENENENOOOOOOEEOOOSOOOENNNNEEEOOOOSOOSOSOSOOSOEOENNNNNN");
+            int totalPokemons = cardinalPointService.GetTotalPokemonsByCardinalPoint(points);
+            Assert.AreEqual(totalPokemons, 370);
         }
 
         [TestMethod]
         public void Teste2()
         {
-            ICardinalPointsService cardinal = new CardinalPointsService(_cardinalPoints);
-            int total = cardinal.GetTotalPokemonsByCardinalPoint("NNSSNNNNGEEOOOOSOOOSH");
-            Assert.AreEqual(total, -1);
+            ICardinalPointsService cardinalPointService = new CardinalPointsService(_cardinalPoints);
+            IList<Point> points = cardinalPointService.ToPoints("NNSSNNNNGEEOOOOSOOOSH");
+            int totalPokemons = cardinalPointService.GetTotalPokemonsByCardinalPoint(points);
+            Assert.AreEqual(totalPokemons, -1);
         }
 
         [TestMethod]
         public void Teste3()
         {
-            ICardinalPointsService cardinal = new CardinalPointsService(_cardinalPoints);
-            int total = cardinal.GetTotalPokemonsByCardinalPoint("SNSNENENENENENOOO");
-            Assert.AreEqual(total, 15);
+            ICardinalPointsService cardinalPointService = new CardinalPointsService(_cardinalPoints);
+            IList<Point> points = cardinalPointService.ToPoints("SNSNENENENENENOOO");
+            int totalPokemons = cardinalPointService.GetTotalPokemonsByCardinalPoint(points);
+            Assert.AreEqual(totalPokemons, 15);
         }
 
         [TestMethod]
         public void Teste4()
         {
-            ICardinalPointsService cardinal = new CardinalPointsService(_cardinalPoints);
-            int total = cardinal.GetTotalPokemonsByCardinalPoint("E");
-            Assert.AreEqual(total, 2);
+            ICardinalPointsService cardinalPointService = new CardinalPointsService(_cardinalPoints);
+            IList<Point> points = cardinalPointService.ToPoints("E");
+            int totalPokemons = cardinalPointService.GetTotalPokemonsByCardinalPoint(points);
+            Assert.AreEqual(totalPokemons, 2);
         }
     }
 }
