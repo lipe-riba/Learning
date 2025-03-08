@@ -2,7 +2,7 @@
 
 namespace AshProjeto.Services
 {
-    public class MessageService
+    public sealed class MessageService
     {
         public static void Show(string msg)
         {

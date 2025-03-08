@@ -1,27 +1,43 @@
 ﻿using AshProjeto.Interfaces;
 using AshProjeto.Models;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
 
 namespace AshProjeto.Services
 {
     public sealed class CardinalPointsService : ICardinalPointsService
     {
-        private Dictionary<string, Point> _points;
+        private readonly Dictionary<string, Point> _points;
 
         public CardinalPointsService(ICardinalPoints cardinalPoints)
         {
+            if (cardinalPoints == null)
+            {
+                throw new ArgumentNullException("cardinalPoints");
+            }
+
             _points = cardinalPoints.ToDictionary();
         }
 
-        public bool Valid(char cardinal)
+        public bool ValidMovement(char cardinal)
         {
             return _points.ContainsKey(cardinal.ToString());
+        }
+        public bool ValidMovement(Point point)
+        {
+            return _points.ContainsValue(point);
         }
 
         public Point ToPoint(char cardinal)
         {
-            return _points[cardinal.ToString()];
+            Point point = _points[cardinal.ToString()];
+            if (point.IsEmpty())
+            {
+                point = CardinalPoints.ZERO;
+            }
+            return point;
         }
 
         public Point MoveTo(Point fromPoint, char toCardinal)
@@ -33,42 +49,61 @@ namespace AshProjeto.Services
 
         public Point MoveTo(Point fromPoint, Point toPoint)
         {
+            if (fromPoint.IsEmpty())
+            {
+                fromPoint = CardinalPoints.ZERO;
+            }
+            if (toPoint.IsEmpty())
+            {
+                toPoint = CardinalPoints.ZERO;
+            }
+
             toPoint.Offset(fromPoint.X, fromPoint.Y);
             return toPoint;
         }
 
-        public int GetTotalPokemonsByCardinalPoint(string coords)
+        public int GetTotalPokemonsByCardinalPoint(IList<Point> coords)
         {
-            HashSet<string> hsPointPokemonsCollected = new HashSet<string>();
+            if (coords.IsEmpty()) return -1;
 
-            Point point = CardinalPoints.ZERO;
+            HashSet<string> hsPointsOfPokemonsCollected = new HashSet<string>();
 
-            //The initial position already has a pokemon
-            string strPoint = point.ToString();
-            hsPointPokemonsCollected.Add(strPoint);
+            Point currentPoint = CardinalPoints.ZERO;
 
-            foreach (char cardinal in coords)
+            string strInitialPoint = currentPoint.ToString();
+            hsPointsOfPokemonsCollected.Add(strInitialPoint);
+
+            foreach (Point cardinalPoint in coords)
             {
-                //Check if has invalid movement
-                if (!Valid(cardinal))
+                if (!ValidMovement(cardinalPoint))
                 {
-                    //If has invalid movement, exit with value -1
                     return -1;
                 }
 
-                //Move to next coordinate
-                point = MoveTo(point, cardinal);
-                strPoint = point.ToString();
+                currentPoint = MoveTo(currentPoint, cardinalPoint);
+                strInitialPoint = currentPoint.ToString();
 
-                //If there is no pokemon at that coordinate, add it
-                if (!hsPointPokemonsCollected.Contains(strPoint))
+                if (!hsPointsOfPokemonsCollected.Contains(strInitialPoint))
                 {
-                    hsPointPokemonsCollected.Add(strPoint);
+                    hsPointsOfPokemonsCollected.Add(strInitialPoint);
                 }
             }
 
-            //Returning the number of pokemons found
-            return hsPointPokemonsCollected.Count;
+            return hsPointsOfPokemonsCollected.Count;
+        }
+
+        public IList<Point> ToPoints(string cardinalPoints)
+        {
+            if (cardinalPoints.IsEmpty())
+            {
+                return new List<Point>();
+            }
+
+            return cardinalPoints
+                .ToCharArray()
+                .AsEnumerable()
+                .Select(s => ToPoint(s))
+                .ToList();
         }
     }
 }

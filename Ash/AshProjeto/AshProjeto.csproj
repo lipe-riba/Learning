@@ -46,6 +46,8 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\TypeExtension.cs" />
+    <Compile Include="Extensions\StringExtension.cs" />
     <Compile Include="Interfaces\ICardinalPoints.cs" />
     <Compile Include="Models\CardinalPoints.cs" />
     <Compile Include="Services\CardinalPointsService.cs" />
