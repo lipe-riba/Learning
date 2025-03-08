@@ -1,0 +1,12 @@
+E:\Projetos\VisualStudio\Learning\UnitAshProjeto\obj\Debug\UnitAshProjeto.csproj.AssemblyReference.cache
+E:\Projetos\VisualStudio\Learning\UnitAshProjeto\obj\Debug\UnitAshProjeto.csproj.CoreCompileInputs.cache
+E:\Projetos\VisualStudio\Learning\UnitAshProjeto\bin\Debug\UnitAshProjeto.dll
+E:\Projetos\VisualStudio\Learning\UnitAshProjeto\bin\Debug\UnitAshProjeto.pdb
+E:\Projetos\VisualStudio\Learning\UnitAshProjeto\bin\Debug\AshProjeto.exe
+E:\Projetos\VisualStudio\Learning\UnitAshProjeto\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+E:\Projetos\VisualStudio\Learning\UnitAshProjeto\bin\Debug\AshProjeto.pdb
+E:\Projetos\VisualStudio\Learning\UnitAshProjeto\bin\Debug\AshProjeto.exe.config
+E:\Projetos\VisualStudio\Learning\UnitAshProjeto\bin\Debug\pt-BR\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+E:\Projetos\VisualStudio\Learning\UnitAshProjeto\obj\Debug\UnitAshP.AFDFB63F.Up2Date
+E:\Projetos\VisualStudio\Learning\UnitAshProjeto\obj\Debug\UnitAshProjeto.dll
+E:\Projetos\VisualStudio\Learning\UnitAshProjeto\obj\Debug\UnitAshProjeto.pdb
