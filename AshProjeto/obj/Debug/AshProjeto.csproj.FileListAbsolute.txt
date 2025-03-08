@@ -1,7 +1,0 @@
-E:\Projetos\VisualStudio\Learning\AshProjeto\obj\Debug\AshProjeto.csproj.AssemblyReference.cache
-E:\Projetos\VisualStudio\Learning\AshProjeto\obj\Debug\AshProjeto.csproj.CoreCompileInputs.cache
-E:\Projetos\VisualStudio\Learning\AshProjeto\bin\Debug\AshProjeto.exe.config
-E:\Projetos\VisualStudio\Learning\AshProjeto\bin\Debug\AshProjeto.exe
-E:\Projetos\VisualStudio\Learning\AshProjeto\bin\Debug\AshProjeto.pdb
-E:\Projetos\VisualStudio\Learning\AshProjeto\obj\Debug\AshProjeto.exe
-E:\Projetos\VisualStudio\Learning\AshProjeto\obj\Debug\AshProjeto.pdb
