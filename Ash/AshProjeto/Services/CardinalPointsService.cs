@@ -13,7 +13,7 @@ namespace AshProjeto.Services
 
         public CardinalPointsService(ICardinalPoints cardinalPoints)
         {
-            if (cardinalPoints == null)
+            if (cardinalPoints.IsEmpty())
             {
                 throw new ArgumentNullException("cardinalPoints");
             }
