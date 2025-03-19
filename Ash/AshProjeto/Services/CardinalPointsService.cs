@@ -10,6 +10,7 @@ namespace AshProjeto.Services
     public sealed class CardinalPointsService : ICardinalPointsService
     {
         private readonly Dictionary<string, Point> _points;
+        public const int COUNT_ERROR = -1;
 
         public CardinalPointsService(ICardinalPoints cardinalPoints)
         {
@@ -66,30 +67,29 @@ namespace AshProjeto.Services
         {
             if (points.IsEmpty()) return -1;
 
-            HashSet<string> hsPointsOfPokemonsCollected = new HashSet<string>();
+            HashSet<string> pokemonsCollected = new HashSet<string>();
 
             Point currentPoint = CardinalPoints.ZERO;
 
-            string strInitialPoint = currentPoint.ToString();
-            hsPointsOfPokemonsCollected.Add(strInitialPoint);
+            string initialPoint = currentPoint.ToString();
+            pokemonsCollected.Add(initialPoint);
 
             foreach (Point cardinalPoint in points)
             {
                 if (!ValidMovement(cardinalPoint))
                 {
-                    return -1;
+                    return COUNT_ERROR;
                 }
 
                 currentPoint = MoveTo(currentPoint, cardinalPoint);
-                strInitialPoint = currentPoint.ToString();
 
-                if (!hsPointsOfPokemonsCollected.Contains(strInitialPoint))
+                if (!pokemonsCollected.Contains(currentPoint.ToString()))
                 {
-                    hsPointsOfPokemonsCollected.Add(strInitialPoint);
+                    pokemonsCollected.Add(currentPoint.ToString());
                 }
             }
 
-            return hsPointsOfPokemonsCollected.Count;
+            return pokemonsCollected.Count;
         }
 
         public IList<Point> ToPoints(string cardinalPoints)

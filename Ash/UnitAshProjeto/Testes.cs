@@ -27,7 +27,7 @@ namespace UnitAshProjeto
             ICardinalPointsService cardinalPointService = new CardinalPointsService(_cardinalPoints);
             IList<Point> points = cardinalPointService.ToPoints("NNSSNNNNGEEOOOOSOOOSH");
             int totalPokemons = cardinalPointService.GetTotalPokemons(points);
-            Assert.AreEqual(totalPokemons, -1);
+            Assert.AreEqual(totalPokemons, CardinalPointsService.COUNT_ERROR);
         }
 
         [TestMethod]

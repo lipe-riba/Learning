@@ -26,7 +26,6 @@ namespace AshProjeto
             }
             else
             {
-                //If there are no coordinates, get them from Console.
                 cardinalPointsArgs = Console.ReadLine();
             }
 
@@ -41,7 +40,7 @@ namespace AshProjeto
             IList<Point> points = cardinalPointService.ToPoints(cardinalPointsArgs);
             int totalPokemons = cardinalPointService.GetTotalPokemons(points);
 
-            bool hasInvalidMovement = (totalPokemons == -1);
+            bool hasInvalidMovement = (totalPokemons == CardinalPointsService.COUNT_ERROR);
             if (hasInvalidMovement)
             {
                 MessageService.Show("Invalid movement!");
