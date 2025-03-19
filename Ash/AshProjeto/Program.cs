@@ -39,7 +39,7 @@ namespace AshProjeto
 
             CardinalPointsService cardinalPointService = new CardinalPointsService(new CardinalPoints());
             IList<Point> points = cardinalPointService.ToPoints(cardinalPointsArgs);
-            int totalPokemons = cardinalPointService.GetTotalPokemonsByCardinalPoint(points);
+            int totalPokemons = cardinalPointService.GetTotalPokemons(points);
 
             bool hasInvalidMovement = (totalPokemons == -1);
             if (hasInvalidMovement)

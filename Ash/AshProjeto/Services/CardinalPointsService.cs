@@ -62,9 +62,9 @@ namespace AshProjeto.Services
             return toPoint;
         }
 
-        public int GetTotalPokemonsByCardinalPoint(IList<Point> coords)
+        public int GetTotalPokemons(IList<Point> points)
         {
-            if (coords.IsEmpty()) return -1;
+            if (points.IsEmpty()) return -1;
 
             HashSet<string> hsPointsOfPokemonsCollected = new HashSet<string>();
 
@@ -73,7 +73,7 @@ namespace AshProjeto.Services
             string strInitialPoint = currentPoint.ToString();
             hsPointsOfPokemonsCollected.Add(strInitialPoint);
 
-            foreach (Point cardinalPoint in coords)
+            foreach (Point cardinalPoint in points)
             {
                 if (!ValidMovement(cardinalPoint))
                 {

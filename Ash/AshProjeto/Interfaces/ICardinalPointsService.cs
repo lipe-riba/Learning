@@ -5,7 +5,7 @@ namespace AshProjeto.Interfaces
 {
     public interface ICardinalPointsService
     {
-        int GetTotalPokemonsByCardinalPoint(IList<Point> cardinalPoint);
+        int GetTotalPokemons(IList<Point> points);
         IList<Point> ToPoints(string cardinalPoints);
     }
 }

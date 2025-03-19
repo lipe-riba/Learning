@@ -17,7 +17,7 @@ namespace UnitAshProjeto
         {
             ICardinalPointsService cardinalPointService = new CardinalPointsService(_cardinalPoints);
             IList<Point> points = cardinalPointService.ToPoints("SNSNSNSNSNENENENENENOOOOOOEEOOOSOOOENNNNEEEOOOOSOOSOSOSOOSOEOENNNNNNSNSNSNSNSNENENENENENOOOOOOEEOOOSOOOENNNNEEEOOOOSOOSOSOSOOSOEOENNNNNNSNSNSNSNSNENENENENENOOOOOOEEOOOSOOOENNNNEEEOOOOSOOSOSOSOOSOEOENNNNNNSNSNSNSNSNENENENENENOOOOOOEEOOOSOOOENNNNEEEOOOOSOOSOSOSOOSOEOENNNNNNSNSNSNSNSNENENENENENOOOOOOEEOOOSOOOENNNNEEEOOOOSOOSOSOSOOSOEOENNNNNNSNSNSNSNSNENENENENENOOOOOOEEOOOSOOOENNNNEEEOOOOSOOSOSOSOOSOEOENNNNNNSNSNSNSNSNENENENENENOOOOOOEEOOOSOOOENNNNEEEOOOOSOOSOSOSOOSOEOENNNNNNSNSNSNSNSNENENENENENOOOOOOEEOOOSOOOENNNNEEEOOOOSOOSOSOSOOSOEOENNNNNN");
-            int totalPokemons = cardinalPointService.GetTotalPokemonsByCardinalPoint(points);
+            int totalPokemons = cardinalPointService.GetTotalPokemons(points);
             Assert.AreEqual(totalPokemons, 370);
         }
 
@@ -26,7 +26,7 @@ namespace UnitAshProjeto
         {
             ICardinalPointsService cardinalPointService = new CardinalPointsService(_cardinalPoints);
             IList<Point> points = cardinalPointService.ToPoints("NNSSNNNNGEEOOOOSOOOSH");
-            int totalPokemons = cardinalPointService.GetTotalPokemonsByCardinalPoint(points);
+            int totalPokemons = cardinalPointService.GetTotalPokemons(points);
             Assert.AreEqual(totalPokemons, -1);
         }
 
@@ -35,7 +35,7 @@ namespace UnitAshProjeto
         {
             ICardinalPointsService cardinalPointService = new CardinalPointsService(_cardinalPoints);
             IList<Point> points = cardinalPointService.ToPoints("SNSNENENENENENOOO");
-            int totalPokemons = cardinalPointService.GetTotalPokemonsByCardinalPoint(points);
+            int totalPokemons = cardinalPointService.GetTotalPokemons(points);
             Assert.AreEqual(totalPokemons, 15);
         }
 
@@ -44,7 +44,7 @@ namespace UnitAshProjeto
         {
             ICardinalPointsService cardinalPointService = new CardinalPointsService(_cardinalPoints);
             IList<Point> points = cardinalPointService.ToPoints("E");
-            int totalPokemons = cardinalPointService.GetTotalPokemonsByCardinalPoint(points);
+            int totalPokemons = cardinalPointService.GetTotalPokemons(points);
             Assert.AreEqual(totalPokemons, 2);
         }
     }
