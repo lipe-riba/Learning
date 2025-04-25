@@ -65,7 +65,7 @@ namespace AshProjeto.Services
 
         public int GetTotalPokemons(IList<Point> points)
         {
-            if (points.IsEmpty()) return -1;
+            if (points.IsEmpty()) return COUNT_ERROR;
 
             HashSet<string> pokemonsCollected = new HashSet<string>();
 
