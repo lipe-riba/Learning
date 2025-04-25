@@ -43,9 +43,9 @@ namespace AshProjeto.Services
 
         public Point MoveTo(Point fromPoint, char toCardinal)
         {
-            Point p = ToPoint(toCardinal);
-            p.Offset(fromPoint.X, fromPoint.Y);
-            return p;
+            Point point = ToPoint(toCardinal);
+            point.Offset(fromPoint.X, fromPoint.Y);
+            return point;
         }
 
         public Point MoveTo(Point fromPoint, Point toPoint)
